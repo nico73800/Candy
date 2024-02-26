@@ -15,6 +15,7 @@
 		CE740CCC2B8CA6070044A657 /* CandyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE740CCB2B8CA6070044A657 /* CandyTests.swift */; };
 		CE740CD62B8CA6070044A657 /* CandyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE740CD52B8CA6070044A657 /* CandyUITests.swift */; };
 		CE740CD82B8CA6070044A657 /* CandyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE740CD72B8CA6070044A657 /* CandyUITestsLaunchTests.swift */; };
+		CEE99BC32B8D084200EA7149 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE99BC22B8D084200EA7149 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		CE740CD12B8CA6070044A657 /* CandyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE740CD52B8CA6070044A657 /* CandyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyUITests.swift; sourceTree = "<group>"; };
 		CE740CD72B8CA6070044A657 /* CandyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEE99BC22B8D084200EA7149 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				CE740CB82B8CA6030044A657 /* CandyApp.swift */,
 				CE740CBA2B8CA6030044A657 /* ContentView.swift */,
 				CE740CBC2B8CA6030044A657 /* Item.swift */,
+				CEE99BC22B8D084200EA7149 /* MenuView.swift */,
 				CE740CBE2B8CA6060044A657 /* Assets.xcassets */,
 				CE740CC02B8CA6060044A657 /* Preview Content */,
 			);
@@ -262,6 +265,7 @@
 			files = (
 				CE740CBB2B8CA6030044A657 /* ContentView.swift in Sources */,
 				CE740CBD2B8CA6030044A657 /* Item.swift in Sources */,
+				CEE99BC32B8D084200EA7149 /* MenuView.swift in Sources */,
 				CE740CB92B8CA6030044A657 /* CandyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
