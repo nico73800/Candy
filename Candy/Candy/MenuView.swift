@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MenuView: View {
     var body: some View {
-        Menu("Options") {
+        Menu("Menu") {
             Button("Les Entreprises", action: entreprises)
             Button("Les Candidatures", action: candidatures)
             Button("Les Entretiens", action: entretiens)

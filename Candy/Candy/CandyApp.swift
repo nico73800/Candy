@@ -25,6 +25,7 @@ struct CandyApp: App {
 
     var body: some Scene {
         WindowGroup {
+            MenuView()
             ContentView()
         }
         .modelContainer(sharedModelContainer)
