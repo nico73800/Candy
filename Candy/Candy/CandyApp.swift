@@ -25,9 +25,15 @@ struct CandyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MenuView()
-            ContentView()
+//            MenuView()
+            MainView()
+            CategoryView()
         }
         .modelContainer(sharedModelContainer)
     }
 }
+
+// TODO:
+// - add menu links
+// - add pages associated to links
+

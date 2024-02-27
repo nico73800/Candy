@@ -18,11 +18,11 @@ struct MenuView: View {
     }
     
     func entreprises() {
-        print("là")
+        print("lààà")
     }
 
     func candidatures() {
-        print("là")
+        print("làà")
     }
     
     func entretiens() {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CategoryViews: View {
+struct CategoryView: View {
     private var categs = ["Entreprises", "Candidatures", "Entretiens"]
     var body: some View {
         TabView {
@@ -19,12 +19,15 @@ struct CategoryViews: View {
                 .tabItem{
                     Label("Entreprises", systemImage: "building")
                 }
-            
+            CandidaturesView()
+                .tabItem{
+                    Label("Candidatures", systemImage: "newspaper")
+                }
         }
 
     }
 }
 
 #Preview {
-    CategoryViews()
+    CategoryView()
 }
