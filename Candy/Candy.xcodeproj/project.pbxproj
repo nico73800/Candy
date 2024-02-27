@@ -19,6 +19,8 @@
 		CED2D7CD2B8D25E800B0258C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2D7CC2B8D25E800B0258C /* CategoryView.swift */; };
 		CEE99BC32B8D084200EA7149 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE99BC22B8D084200EA7149 /* MenuView.swift */; };
 		CEF6E00E2B8E629700744926 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E00D2B8E629700744926 /* MainView.swift */; };
+		CEF6E0102B8E73B900744926 /* CandidaturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E00F2B8E73B900744926 /* CandidaturesModel.swift */; };
+		CEF6E0122B8E747600744926 /* EntreprisesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E0112B8E747600744926 /* EntreprisesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		CED2D7CC2B8D25E800B0258C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		CEE99BC22B8D084200EA7149 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		CEF6E00D2B8E629700744926 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CEF6E00F2B8E73B900744926 /* CandidaturesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidaturesModel.swift; sourceTree = "<group>"; };
+		CEF6E0112B8E747600744926 /* EntreprisesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntreprisesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 				CED2D7CA2B8D254900B0258C /* EntreprisesView.swift */,
 				CED2D7CC2B8D25E800B0258C /* CategoryView.swift */,
 				CEF6E00D2B8E629700744926 /* MainView.swift */,
+				CEF6E00F2B8E73B900744926 /* CandidaturesModel.swift */,
+				CEF6E0112B8E747600744926 /* EntreprisesModel.swift */,
 			);
 			path = Candy;
 			sourceTree = "<group>";
@@ -274,8 +280,10 @@
 			files = (
 				CE740CBB2B8CA6030044A657 /* CandidaturesView.swift in Sources */,
 				CEF6E00E2B8E629700744926 /* MainView.swift in Sources */,
+				CEF6E0102B8E73B900744926 /* CandidaturesModel.swift in Sources */,
 				CE740CBD2B8CA6030044A657 /* Item.swift in Sources */,
 				CED2D7CB2B8D254A00B0258C /* EntreprisesView.swift in Sources */,
+				CEF6E0122B8E747600744926 /* EntreprisesModel.swift in Sources */,
 				CEE99BC32B8D084200EA7149 /* MenuView.swift in Sources */,
 				CED2D7CD2B8D25E800B0258C /* CategoryView.swift in Sources */,
 				CE740CB92B8CA6030044A657 /* CandyApp.swift in Sources */,

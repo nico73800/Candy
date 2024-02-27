@@ -10,7 +10,7 @@ import SwiftData
 
 struct EntreprisesView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var items: [Entreprises]
 
     var body: some View {
   
@@ -33,9 +33,9 @@ struct EntreprisesView: View {
                     List {
                         ForEach(items) { item in
                             NavigationLink {
-                                Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                                Text("Item n° \(item.idEnt)")
                             } label: {
-                                Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                                Text(item.nom)
                             }
                         }
                         .onDelete(perform: deleteItems)
@@ -58,7 +58,7 @@ struct EntreprisesView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
+            let newItem = Entreprises(id: UUID(), nom: "golum", CP: "12345", rue: "1 rue des cétacés", ville: "Golum Ville")
             modelContext.insert(newItem)
         }
     }
@@ -74,4 +74,6 @@ struct EntreprisesView: View {
 
 #Preview {
     EntreprisesView()
+        .modelContainer(for: Entreprises.self, inMemory: true)
+
 }

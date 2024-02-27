@@ -10,7 +10,7 @@ import SwiftData
 
 struct CandidaturesView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var items: [Candidatures]
 
     var body: some View {
   
@@ -18,11 +18,6 @@ struct CandidaturesView: View {
                 if items.isEmpty {
                     Text("Rien à afficher")
                     .toolbar {
-                        /*
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            EditButton()
-                        }
-                         */
                         ToolbarItem {
                             Button(action: addItem) {
                                 Label("Add Item", systemImage: "plus")
@@ -33,9 +28,9 @@ struct CandidaturesView: View {
                     List {
                         ForEach(items) { item in
                             NavigationLink {
-                                Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                                Text("Candidatures n° \(item.idCandidatures.uuidString)")
                             } label: {
-                                Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                                Text("Numéro candidature : \(item.idCandidatures.uuidString)")
                             }
                         }
                         .onDelete(perform: deleteItems)
@@ -58,7 +53,7 @@ struct CandidaturesView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
+            let newItem = Candidatures(id: UUID(), date: Date.now, entreprise: Entreprises(id: UUID(), nom: "golum", CP: "12345", rue: "1 rue des cétacés", ville: "Golum Ville"), resp: "Eh macarena")
             modelContext.insert(newItem)
         }
     }
@@ -74,5 +69,5 @@ struct CandidaturesView: View {
 
 #Preview {
     CandidaturesView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Candidatures.self, inMemory: true)
 }

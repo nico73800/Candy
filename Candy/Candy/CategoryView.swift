@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CategoryView: View {
-    private var categs = ["Entreprises", "Candidatures", "Entretiens"]
     var body: some View {
         TabView {
             MainView()
