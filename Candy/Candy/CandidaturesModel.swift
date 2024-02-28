@@ -23,4 +23,20 @@ final class Candidatures {
         self.resp = resp
     }
     
+    func convertUUID() -> String {
+        return self.idCandidatures.uuidString
+    }
+    
+    func getNomEntreprise() -> String {
+        return "\(self.entreprise.nom)"
+    }
+
+}
+
+extension Candidatures {
+    var textValue: String {
+        get {
+            return "\(self.entreprise.nom)"
+        }
+    }
 }

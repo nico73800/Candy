@@ -5,13 +5,14 @@
 //  Created by Nicolas CHALOYARD on 26/02/2024.
 //
 
+import Foundation
 import SwiftUI
 import SwiftData
 
 struct CandidaturesView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Candidatures]
-
+    
     var body: some View {
   
             NavigationSplitView {
@@ -27,10 +28,45 @@ struct CandidaturesView: View {
                 } else {
                     List {
                         ForEach(items) { item in
-                            NavigationLink {
-                                Text("Candidatures n° \(item.idCandidatures.uuidString)")
-                            } label: {
-                                Text("Numéro candidature : \(item.idCandidatures.uuidString)")
+
+//                            let _val = self.items[item].getNomEntreprise()
+                            
+                            VStack(alignment: .trailing) {
+                                HStack(alignment: .lastTextBaseline) {
+                                    
+                                    NavigationLink {
+                                        GroupBox(label:
+                                            Label("Candidatures", systemImage: "newspaper")
+                                        ) {
+                                            Text("ID : \(item.idCandidatures.uuidString)")
+                                                .frame(maxWidth: .infinity, alignment: .leading)
+                                                .font(.body.bold())
+
+                                            List {
+                                                Text("\(item.entreprise.nom.uppercased())")
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                Text("\(item.entreprise.rue) \(item.entreprise.ville) \(item.entreprise.CP) ")
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                Text("\(item.resp)")
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                Text("\(item.date.formatted(date: .complete, time: .omitted))")
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                                            }
+                                            .padding(0)
+                                            .contentMargins(5)
+                                            .cornerRadius(20)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                        }
+                                        .padding(10)
+                                        .cornerRadius(20)
+
+                                        
+                                    } label: {
+                                        Text("Numéro candidature : \(item.idCandidatures.uuidString)")
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                }
                             }
                         }
                         .onDelete(perform: deleteItems)
@@ -65,9 +101,4 @@ struct CandidaturesView: View {
             }
         }
     }
-}
-
-#Preview {
-    CandidaturesView()
-        .modelContainer(for: Candidatures.self, inMemory: true)
 }

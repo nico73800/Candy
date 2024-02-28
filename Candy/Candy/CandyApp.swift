@@ -37,7 +37,7 @@ struct CandyApp: App {
             
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
-            fatalError("Failed to configure DB");
+            fatalError("Failed to configure DB : \(error)");
         }
     }()
 
@@ -56,4 +56,8 @@ struct CandyApp: App {
 // - add pages associated to links : done
 // - add data persistance : done
 // - add all input to update data (Entreprises & Candidatures)
+// - add style to pages (CandidaturesView & EntreprisesView) to be more pleasant to see
+// --> Box around item text content
+// --> label distinct from content
+// --> padding, bold, and stuff like that
 
