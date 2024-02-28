@@ -12,7 +12,9 @@ import SwiftData
 struct CandidaturesView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Candidatures]
-    
+    private let dt = Date.FormatStyle()
+        .locale(Locale(identifier: "fr_FR"))
+
     var body: some View {
   
             NavigationSplitView {
@@ -33,8 +35,8 @@ struct CandidaturesView: View {
                             
                             VStack(alignment: .trailing) {
                                 HStack(alignment: .lastTextBaseline) {
-                                    
                                     NavigationLink {
+                                        
                                         GroupBox(label:
                                             Label("Candidatures", systemImage: "newspaper")
                                         ) {
@@ -49,7 +51,7 @@ struct CandidaturesView: View {
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                 Text("\(item.resp)")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                                Text("\(item.date.formatted(date: .complete, time: .omitted))")
+                                                Text("\(item.date.formatted(self.dt))")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
 
                                             }
@@ -61,9 +63,9 @@ struct CandidaturesView: View {
                                         .padding(10)
                                         .cornerRadius(20)
 
-                                        
                                     } label: {
-                                        Text("Numéro candidature : \(item.idCandidatures.uuidString)")
+//                                        var timeZone = TimeZone.current
+                                        Text("Candidature : \(item.textValue) au \(item.date.formatted(self.dt))")
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 }
