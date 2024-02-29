@@ -30,8 +30,6 @@ struct CandidaturesView: View {
                 } else {
                     List {
                         ForEach(items) { item in
-
-//                            let _val = self.items[item].getNomEntreprise()
                             
                             VStack(alignment: .trailing) {
                                 HStack(alignment: .lastTextBaseline) {
@@ -47,18 +45,17 @@ struct CandidaturesView: View {
                                             List {
                                                 Text("\(item.entreprise.nom.uppercased())")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
+                                                
                                                 Text("\(item.entreprise.rue) \(item.entreprise.ville) \(item.entreprise.CP) ")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
+                                                
                                                 Text("\(item.resp)")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
+                                                
                                                 Text("\(item.date.formatted(self.dt))")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
 
                                             }
-                                            .padding(0)
-                                            .contentMargins(5)
-                                            .cornerRadius(20)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
                                         }
                                         .padding(10)
                                         .cornerRadius(20)
