@@ -18,11 +18,6 @@ struct EntreprisesView: View {
                 if items.isEmpty {
                     Text("Rien à afficher")
                     .toolbar {
-                        /*
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            EditButton()
-                        }
-                         */
                         ToolbarItem {
                             Button(action: addItem) {
                                 Label("Add Item", systemImage: "plus")
@@ -32,11 +27,41 @@ struct EntreprisesView: View {
                 } else {
                     List {
                         ForEach(items) { item in
-                            NavigationLink {
-                                Text("Item n° \(item.idEnt)")
-                            } label: {
-                                Text(item.nom)
+                            VStack(alignment: .trailing) {
+                                HStack(alignment: .lastTextBaseline) {
+                                    NavigationLink {
+                                        GroupBox(label:
+                                            Label("Entreprises",
+                                                 systemImage: "building")
+                                        ) {
+                                            Text("ID : \(item.idEnt)")
+                                                .frame(maxWidth:.infinity, alignment: .leading)
+                                                .font(.body.bold())
+                                            
+                                            List {
+                                                Text("\(item.nom.uppercased())")
+                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                
+                                                Text("\(item.rue) \(item.ville) \(item.CP)")
+                                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                            }
+                                            .padding(0)
+                                            .contentMargins(5)
+                                            .cornerRadius(20)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                                        }
+                                        .padding(10)
+                                        .cornerRadius(20)
+
+                                    } label: {
+                                        Text("Entreprise : \(item.nom)")
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                                }
                             }
+
                         }
                         .onDelete(perform: deleteItems)
                     }
