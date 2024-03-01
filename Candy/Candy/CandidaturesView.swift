@@ -18,6 +18,7 @@ struct CandidaturesView: View {
     var body: some View {
   
             NavigationSplitView {
+                
                 if items.isEmpty {
                     Text("Rien à afficher")
                     .toolbar {
@@ -27,12 +28,16 @@ struct CandidaturesView: View {
                             }
                         }
                     }
+                    
                 } else {
+                    
                     List {
                         ForEach(items) { item in
                             
                             VStack(alignment: .trailing) {
+                                
                                 HStack(alignment: .lastTextBaseline) {
+                                    
                                     NavigationLink {
                                         
                                         GroupBox(label:
@@ -65,22 +70,32 @@ struct CandidaturesView: View {
                                         Text("Candidature : \(item.textValue) au \(item.date.formatted(self.dt))")
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
+                                    
                                 }
+                                
                             }
+                            
                         }
                         .onDelete(perform: deleteItems)
+                        
                     }
+                    
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
                     }
+                    
                     ToolbarItem {
                         Button(action: addItem) {
                             Label("Add Item", systemImage: "plus")
                         }
+                        
                     }
+                    
                 }
+                    
             }
+                
         } detail: {
             Text("Select an item")
         }
@@ -100,4 +115,5 @@ struct CandidaturesView: View {
             }
         }
     }
+    
 }

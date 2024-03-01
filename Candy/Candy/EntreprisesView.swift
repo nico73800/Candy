@@ -24,12 +24,17 @@ struct EntreprisesView: View {
                             }
                         }
                     }
+                    
                 } else {
                     List {
                         ForEach(items) { item in
+                            
                             VStack(alignment: .trailing) {
+                                
                                 HStack(alignment: .lastTextBaseline) {
+                                    
                                     NavigationLink {
+                                        
                                         GroupBox(label:
                                             Label("Entreprises",
                                                  systemImage: "building")
@@ -60,22 +65,30 @@ struct EntreprisesView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
 
                                 }
+                                
                             }
 
                         }
                         .onDelete(perform: deleteItems)
+                        
                     }
+                    
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
                     }
+                    
                     ToolbarItem {
                         Button(action: addItem) {
                             Label("Add Item", systemImage: "plus")
                         }
+                        
                     }
+                    
                 }
+                    
             }
+                
         } detail: {
             Text("Select an item")
         }
