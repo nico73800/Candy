@@ -17,6 +17,7 @@ struct EntAddItemView: View {
     @State private var rue: String = ""
     @State private var ville: String = ""
     @State private var cp: String = ""
+    @State private var erreur: Bool = false
     
 
 
@@ -56,30 +57,32 @@ struct EntAddItemView: View {
                 
             }
             .navigationTitle(Text("Ajout d'une entreprise"))
-            .onSubmit {
-                if (nom.isEmpty == false &&
+            .onSubmit() {
+                guard nom.isEmpty == false &&
                     rue.isEmpty == false &&
                     ville.isEmpty == false &&
-                    cp.isEmpty == false) {
-                    
-                    AlertView()
-                                        
-                } else {
-                    addItem(idE: id, nomE: nom, cpE: cp, rueE: rue, villeE: ville)
+                    cp.isEmpty == false
+                else {
                     return
-                    
                 }
+                
+                addEntrepriseToModel(idE: id, nomE: nom, cpE: cp, rueE: rue, villeE: ville)
+                dismiss()
             }
+            .submitLabel(.send)
+
+            
+
         }
 
-        
         Button("Retour à la page") {
             dismiss()
         }
         
+        
     }
     
-    private func addItem(idE: UUID, nomE:String, cpE:String, rueE:String, villeE:String) {
+    private func addEntrepriseToModel(idE: UUID, nomE:String, cpE:String, rueE:String, villeE:String) {
         withAnimation {
             let newItem = Entreprises(id: idE, nom: nomE, CP: cpE, rue: rueE, ville: villeE)
             modelContext.insert(newItem)
