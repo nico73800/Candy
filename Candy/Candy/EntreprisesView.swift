@@ -10,6 +10,7 @@ import SwiftData
 
 struct EntreprisesView: View {
     @Environment(\.modelContext) private var modelContext
+    @State private var showingSheet = false
     @Query private var items: [Entreprises]
 
     var body: some View {
@@ -19,10 +20,14 @@ struct EntreprisesView: View {
                     Text("Rien à afficher")
                     .toolbar {
                         ToolbarItem {
-                            Button(action: addItem) {
-                                Label("Add Item", systemImage: "plus")
+                            Button("Add Item") {
+                                showingSheet.toggle()
+                                
                             }
-                        }
+                            
+                            .sheet(isPresented: $showingSheet) {
+                                EntAddItemView()
+                            }                        }
                     }
                     
                 } else {
@@ -79,8 +84,13 @@ struct EntreprisesView: View {
                     }
                     
                     ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
+                        Button("Add Item") {
+                            showingSheet.toggle()
+                            
+                        }
+                        
+                        .sheet(isPresented: $showingSheet) {
+                            EntAddItemView()
                         }
                         
                     }
@@ -94,12 +104,6 @@ struct EntreprisesView: View {
         }
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Entreprises(id: UUID(), nom: "golum", CP: "12345", rue: "1 rue des cétacés", ville: "Golum Ville")
-            modelContext.insert(newItem)
-        }
-    }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
