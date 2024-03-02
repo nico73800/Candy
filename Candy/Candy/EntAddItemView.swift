@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import Toast
 
 struct EntAddItemView: View {
     @Environment(\.dismiss) private var dismiss
@@ -63,12 +64,16 @@ struct EntAddItemView: View {
                     ville.isEmpty == false &&
                     cp.isEmpty == false
                 else {
+                    let toast = Toast.text("Erreur : données manquantes")
+                    toast.show()
+
                     return
                 }
                 
                 addEntrepriseToModel(idE: id, nomE: nom, cpE: cp, rueE: rue, villeE: ville)
-                dismiss()
-            }
+                    let toast = Toast.text("Données ajoutées avec succès")
+                    toast.show()
+                            }
             .submitLabel(.send)
 
             
