@@ -1,5 +1,5 @@
 //
-//  CategoryViews.swift
+//  CategoryView.swift
 //  Candy
 //
 //  Created by Nicolas CHALOYARD on 26/02/2024.
