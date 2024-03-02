@@ -25,11 +25,12 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
 - Ajout de la vue permettant l'ajout de données dans la BDD
 - Ajout de la fonction addEntrepriseToModel(...) permettant l'ajout des données d'entreprise à la BDD
 
-### V0.4.1 : Correction de bugs
-- Correction de la vue : 
+### V0.4.1 : Correction des vues
+- Correction de la vue EntAddEntrepriseToModel(...) : 
     * Correction de la partie .onSubmit du bloc Form, où "guard" mettait à jour un booléan pour savoir si oui ou on ajoute les données
     * Suppression du bloc "if" et du booléan
     * Ajout d'un retour à la page d'accueil quand les données ont bien été saisies (ajout d'un retour visuel à faire en cas d'échec / de réussite) 
+    * Ajout d'une librairie tierce pour l'affichage d'un message si les données ont bien été saisies ou non
 
 
 ## Fonctionnalités futures ou envisagées
