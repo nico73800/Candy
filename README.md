@@ -18,7 +18,7 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
 - Connexion des vues avec les modèles de données 
 
 ### V0.3 : Début de l'agencement des vues et des liens entre elles 
-- Ajout d'un item "TaView" permettant d'accéder aux différentes vues de l'application
+- Ajout d'un item "TabView" permettant d'accéder aux différentes vues de l'application
 - Modification de l'esthétique des vues
 
 ### V0.4 : Ajout de données dans la BDD
