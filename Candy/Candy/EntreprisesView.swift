@@ -10,30 +10,30 @@ import SwiftData
 
 struct EntreprisesView: View {
     @Environment(\.modelContext) private var modelContext
-    @State private var showingSheet = false
     @Query private var items: [Entreprises]
-//    @Query private var itemsC: [Candidatures]
     
     @Query(sort: [SortDescriptor(\Candidatures.idCandidatures)])
     private var allCandidatures: [Candidatures]
+
+    @State private var showingSheet = false
 
     var body: some View {
         
         NavigationSplitView {
             if items.isEmpty {
                 Text("Rien à afficher")
-                    .toolbar {
-                        ToolbarItem {
-                            Button("Add Item") {
-                                showingSheet.toggle()
-                                
-                            }
+                .toolbar {
+                    ToolbarItem {
+                        Button("Add Item") {
+                            showingSheet.toggle()
                             
-                            .sheet(isPresented: $showingSheet) {
-                                EntAddItemView()
-                            }                        }
+                        }
+                        
+                        .sheet(isPresented: $showingSheet) {
+                            EntAddItemView()
+                        }
                     }
-                
+                }
             } else {
                 List {
                     ForEach(items) { item in
@@ -113,7 +113,7 @@ struct EntreprisesView: View {
         withAnimation {
 
             for index in offsets {
-                let candidaturesFiltrer: [Candidatures] = allCandidatures.filter { $0.entreprise.idEnt == items[index].idEnt }
+                let candidaturesFiltrer: [Candidatures] = allCandidatures.filter { $0.entreprise == items[index].idEnt }
                 for i in candidaturesFiltrer {
                     modelContext.delete(i)
                 }

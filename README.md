@@ -31,9 +31,21 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
     * Suppression du bloc "if" et du booléan
     * Ajout d'un retour à la page d'accueil quand les données ont bien été saisies (ajout d'un retour visuel à faire en cas d'échec / de réussite) 
     * Ajout d'une librairie tierce pour l'affichage d'un message si les données ont bien été saisies ou non
+
 ### V0.4.2 : Ajout des contrôles 
 - Ajout du contrôle d'intégrité dans les données des entreprises liées aux candidatures :
     * Si une entreprise est supprimée et est liée à une candidature, la candidature sera supprimée également.
+
+### V0.5 : Modification du modèle de données et des vues EntreprisesView et CandidaturesView (et sous vues associées)
+- Dans les candidatures, remplacement dans le constructeur de la classe entreprise par l'ID de l'entreprise 
+- Dans la vue CandidaturesView : 
+    - Ajout d'une fonction permettant la récupération des données d'une entreprise par son ID 
+    - Dans la sous vue "CanAddItemView" :
+        - Ajout des fonctionnalités de saisie de la date et du responsable
+        - Ajout d'un DatePicker pour récupérer la date
+        - Ajout d'un Picker pour récupérer le nom et l'ID de l'entreprise 
+        - Ajout d'une fonction addCandidatureToModel(...) pour ajouter les données dans la BDD
+        - Ajout d'une fonction estPresent(...) pour tester la présence de l'ID de l'entreprise avec l'ID récupérer du Picker  
 
 ## Fonctionnalités futures ou envisagées
 ### Fonctionnalités futures 

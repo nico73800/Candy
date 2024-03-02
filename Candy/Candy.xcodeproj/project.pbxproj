@@ -24,6 +24,7 @@
 		CEF6E00E2B8E629700744926 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E00D2B8E629700744926 /* MainView.swift */; };
 		CEF6E0102B8E73B900744926 /* CandidaturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E00F2B8E73B900744926 /* CandidaturesModel.swift */; };
 		CEF6E0122B8E747600744926 /* EntreprisesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E0112B8E747600744926 /* EntreprisesModel.swift */; };
+		D6331BAC2B934F660070A42F /* CanAddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6331BAB2B934F660070A42F /* CanAddItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		CEF6E00D2B8E629700744926 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CEF6E00F2B8E73B900744926 /* CandidaturesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidaturesModel.swift; sourceTree = "<group>"; };
 		CEF6E0112B8E747600744926 /* EntreprisesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntreprisesModel.swift; sourceTree = "<group>"; };
+		D6331BAB2B934F660070A42F /* CanAddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanAddItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				CEF6E0112B8E747600744926 /* EntreprisesModel.swift */,
 				CEDFC5492B92413000B53D2C /* EntAddItemView.swift */,
 				CEDFC54B2B92512100B53D2C /* AlertView.swift */,
+				D6331BAB2B934F660070A42F /* CanAddItemView.swift */,
 			);
 			path = Candy;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6331BAC2B934F660070A42F /* CanAddItemView.swift in Sources */,
 				CE740CBB2B8CA6030044A657 /* CandidaturesView.swift in Sources */,
 				CEF6E00E2B8E629700744926 /* MainView.swift in Sources */,
 				CEF6E0102B8E73B900744926 /* CandidaturesModel.swift in Sources */,

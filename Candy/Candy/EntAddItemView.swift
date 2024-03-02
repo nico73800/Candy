@@ -18,10 +18,6 @@ struct EntAddItemView: View {
     @State private var rue: String = ""
     @State private var ville: String = ""
     @State private var cp: String = ""
-    @State private var erreur: Bool = false
-    
-
-
     
     var body: some View {
                 
@@ -29,33 +25,33 @@ struct EntAddItemView: View {
             Form {
                 Text("ID : \(id)")
                 
-                Section("Nom de l'entreprise : ") {
-                    TextField(text: $nom,
-                                prompt: Text("Required")) {
-                        Text("Nom de l'entreprise ")
+                List {
+                    Section("Nom de l'entreprise") {
+                        TextField(text: $nom,
+                                  prompt: Text("Required")) {
+                            Text("Nom de l'entreprise ")
+                        }.disableAutocorrection(true)
                     }
                     
-                }
-                
-                Section("Adresse :") {
-                    TextField(text: $rue,
-                                prompt: Text("rue (complète avec numéro (requis)")) {
-                        Text("rue (complète avec numéro")
-                    }
-                    
-                    TextField(text: $ville,
-                                prompt: Text("Ville (requis")) {
-                        Text("ville")
-                    }
-                    
-                    TextField(text: $cp,
-                                prompt: Text("Code Postal (requis)")) {
-                        Text("Code Postal")
+                    Section("Adresse") {
+                        TextField(text: $rue,
+                                  prompt: Text("rue (complète avec numéro (requis)")) {
+                            Text("rue (complète avec numéro)")
+                        }.disableAutocorrection(true)
+
                         
+                        TextField(text: $ville,
+                                  prompt: Text("Ville (requis)")) {
+                            Text("ville")
+                        }.disableAutocorrection(true)
+
+                        TextField(text: $cp,
+                                  prompt: Text("Code Postal (requis)")) {
+                            Text("Code Postal")
+                        }.disableAutocorrection(true)
+
                     }
-                    
                 }
-                
             }
             .navigationTitle(Text("Ajout d'une entreprise"))
             .onSubmit() {
@@ -73,10 +69,8 @@ struct EntAddItemView: View {
                 addEntrepriseToModel(idE: id, nomE: nom, cpE: cp, rueE: rue, villeE: ville)
                     let toast = Toast.text("Données ajoutées avec succès")
                     toast.show()
-                            }
+            }
             .submitLabel(.send)
-
-            
 
         }
 

@@ -13,10 +13,10 @@ import SwiftData
 final class Candidatures {
     @Attribute(.unique) var idCandidatures: UUID = UUID()
     var date: Date
-    var entreprise: Entreprises
+    var entreprise: UUID
     var resp: String
     
-    init(id: UUID, date: Date, entreprise: Entreprises, resp: String) {
+    init(id: UUID, date: Date, entreprise: UUID, resp: String) {
         self.idCandidatures = id
         self.date = date
         self.entreprise = entreprise
@@ -27,16 +27,4 @@ final class Candidatures {
         return self.idCandidatures.uuidString
     }
     
-    func getNomEntreprise() -> String {
-        return "\(self.entreprise.nom)"
-    }
-
-}
-
-extension Candidatures {
-    var textValue: String {
-        get {
-            return "\(self.entreprise.nom)"
-        }
-    }
 }

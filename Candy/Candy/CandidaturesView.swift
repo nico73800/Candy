@@ -12,9 +12,16 @@ import SwiftData
 struct CandidaturesView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Candidatures]
+    @Query private var entreprises: [Entreprises]
+
+    // Variable globale pour les dates
     private let dt = Date.FormatStyle()
         .locale(Locale(identifier: "fr_FR"))
 
+    // Variable globale autres
+    // Booléan pour les affichages de vue
+    @State private var showingSheet = false
+    
     var body: some View {
   
             NavigationSplitView {
@@ -23,8 +30,13 @@ struct CandidaturesView: View {
                     Text("Rien à afficher")
                     .toolbar {
                         ToolbarItem {
-                            Button(action: addItem) {
-                                Label("Add Item", systemImage: "plus")
+                            Button("Add Item") {
+                                showingSheet.toggle()
+                                
+                            }
+                            
+                            .sheet(isPresented: $showingSheet) {
+                                CanAddItemView()
                             }
                         }
                     }
@@ -33,6 +45,8 @@ struct CandidaturesView: View {
                     
                     List {
                         ForEach(items) { item in
+                            
+                            let ent = getEntrepriseFromItem(id:item.entreprise)
                             
                             VStack(alignment: .trailing) {
                                 
@@ -48,10 +62,10 @@ struct CandidaturesView: View {
                                                 .font(.body.bold())
 
                                             List {
-                                                Text("\(item.entreprise.nom.uppercased())")
+                                                Text(ent[0].nom)
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                 
-                                                Text("\(item.entreprise.rue) \(item.entreprise.ville) \(item.entreprise.CP) ")
+                                                Text("\(ent[0].rue) - \(ent[0].ville), \(ent[0].CP) ")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                 
                                                 Text("\(item.resp)")
@@ -67,7 +81,7 @@ struct CandidaturesView: View {
 
                                     } label: {
 //                                        var timeZone = TimeZone.current
-                                        Text("Candidature : \(item.textValue) au \(item.date.formatted(self.dt))")
+                                        Text("Candidature : \(ent[0].nom) au \(item.date.formatted(self.dt))")
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     
@@ -86,8 +100,11 @@ struct CandidaturesView: View {
                     }
                     
                     ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
+                        Button("Add Item") {
+                            showingSheet.toggle()
+                        }
+                        .sheet(isPresented:$showingSheet) {
+                            CanAddItemView()
                         }
                         
                     }
@@ -101,19 +118,16 @@ struct CandidaturesView: View {
         }
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Candidatures(id: UUID(), date: Date.now, entreprise: Entreprises(id: UUID(), nom: "golum", CP: "12345", rue: "1 rue des cétacés", ville: "Golum Ville"), resp: "Eh macarena")
-            modelContext.insert(newItem)
-        }
-    }
-
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
                 modelContext.delete(items[index])
             }
         }
+    }
+    
+    private func getEntrepriseFromItem(id:UUID) -> [Entreprises] {
+        return entreprises.filter { $0.idEnt == id }
     }
     
 }
