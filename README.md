@@ -31,7 +31,9 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
     * Suppression du bloc "if" et du booléan
     * Ajout d'un retour à la page d'accueil quand les données ont bien été saisies (ajout d'un retour visuel à faire en cas d'échec / de réussite) 
     * Ajout d'une librairie tierce pour l'affichage d'un message si les données ont bien été saisies ou non
-
+### V0.4.2 : Ajout des contrôles 
+- Ajout du contrôle d'intégrité dans les données des entreprises liées aux candidatures :
+    * Si une entreprise est supprimée et est liée à une candidature, la candidature sera supprimée également.
 
 ## Fonctionnalités futures ou envisagées
 ### Fonctionnalités futures 

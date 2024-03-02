@@ -12,12 +12,16 @@ struct EntreprisesView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var showingSheet = false
     @Query private var items: [Entreprises]
+//    @Query private var itemsC: [Candidatures]
+    
+    @Query(sort: [SortDescriptor(\Candidatures.idCandidatures)])
+    private var allCandidatures: [Candidatures]
 
     var body: some View {
-  
-            NavigationSplitView {
-                if items.isEmpty {
-                    Text("Rien à afficher")
+        
+        NavigationSplitView {
+            if items.isEmpty {
+                Text("Rien à afficher")
                     .toolbar {
                         ToolbarItem {
                             Button("Add Item") {
@@ -29,55 +33,55 @@ struct EntreprisesView: View {
                                 EntAddItemView()
                             }                        }
                     }
-                    
-                } else {
-                    List {
-                        ForEach(items) { item in
+                
+            } else {
+                List {
+                    ForEach(items) { item in
+                        
+                        VStack(alignment: .trailing) {
                             
-                            VStack(alignment: .trailing) {
+                            HStack(alignment: .lastTextBaseline) {
                                 
-                                HStack(alignment: .lastTextBaseline) {
+                                NavigationLink {
                                     
-                                    NavigationLink {
+                                    GroupBox(label:
+                                                Label("Entreprises",
+                                                      systemImage: "building")
+                                    ) {
+                                        Text("ID : \(item.idEnt)")
+                                            .frame(maxWidth:.infinity, alignment: .leading)
+                                            .font(.body.bold())
                                         
-                                        GroupBox(label:
-                                            Label("Entreprises",
-                                                 systemImage: "building")
-                                        ) {
-                                            Text("ID : \(item.idEnt)")
-                                                .frame(maxWidth:.infinity, alignment: .leading)
-                                                .font(.body.bold())
+                                        List {
+                                            Text("\(item.nom.uppercased())")
+                                                .frame(maxWidth: .infinity, alignment: .leading)
                                             
-                                            List {
-                                                Text("\(item.nom.uppercased())")
-                                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                                
-                                                Text("\(item.rue) \(item.ville) \(item.CP)")
-                                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                            }
-                                            .padding(0)
-                                            .contentMargins(5)
-                                            .cornerRadius(20)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-
+                                            Text("\(item.rue) \(item.ville) \(item.CP)")
+                                                .frame(maxWidth: .infinity, alignment: .leading)
                                         }
-                                        .padding(10)
+                                        .padding(0)
+                                        .contentMargins(5)
                                         .cornerRadius(20)
-
-                                    } label: {
-                                        Text("Entreprise : \(item.nom)")
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        
                                     }
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-
+                                    .padding(10)
+                                    .cornerRadius(20)
+                                    
+                                } label: {
+                                    Text("Entreprise : \(item.nom)")
                                 }
+                                .frame(maxWidth: .infinity, alignment: .leading)
                                 
                             }
-
+                            
                         }
-                        .onDelete(perform: deleteItems)
                         
                     }
+                    .onDelete(perform: deleteItems)
                     
+                }
+                
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
@@ -96,21 +100,31 @@ struct EntreprisesView: View {
                     }
                     
                 }
-                    
-            }
                 
+            }
+            
         } detail: {
             Text("Select an item")
         }
     }
-
-
+    
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
+
             for index in offsets {
+                let candidaturesFiltrer: [Candidatures] = allCandidatures.filter { $0.entreprise.idEnt == items[index].idEnt }
+                for i in candidaturesFiltrer {
+                    modelContext.delete(i)
+                }
+
                 modelContext.delete(items[index])
+
+
             }
+            
         }
+        try? modelContext.save()
     }
 }
 
