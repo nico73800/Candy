@@ -60,6 +60,7 @@
 		CED2D7CC2B8D25E800B0258C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		CEDFC5492B92413000B53D2C /* EntAddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntAddItemView.swift; sourceTree = "<group>"; };
 		CEDFC54B2B92512100B53D2C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		CEE835482B9458DB0020AD1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEE99BC22B8D084200EA7149 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		CEF6E00D2B8E629700744926 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CEF6E00F2B8E73B900744926 /* CandidaturesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidaturesModel.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		CE740CB72B8CA6030044A657 /* Candy */ = {
 			isa = PBXGroup;
 			children = (
+				CEE835482B9458DB0020AD1E /* Info.plist */,
 				CE740CB82B8CA6030044A657 /* CandyApp.swift */,
 				CE740CBA2B8CA6030044A657 /* CandidaturesView.swift */,
 				CE740CBC2B8CA6030044A657 /* Item.swift */,
@@ -248,6 +250,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = CE740CAC2B8CA6030044A657;
 			packageReferences = (
@@ -472,6 +475,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Candy/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Candy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -500,6 +504,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Candy/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Candy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
