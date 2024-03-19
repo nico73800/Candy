@@ -62,7 +62,7 @@ struct CandidaturesView: View {
                                                 .font(.body.bold())
 
                                             List {
-                                                Text(ent[0].nom)
+                                                Text("\(ent[0].nom)")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                 
                                                 Text("\(ent[0].rue) - \(ent[0].ville), \(ent[0].CP) ")

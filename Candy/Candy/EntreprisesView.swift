@@ -124,7 +124,6 @@ struct EntreprisesView: View {
             }
             
         }
-        try? modelContext.save()
     }
 }
 
