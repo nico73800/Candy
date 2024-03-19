@@ -10,18 +10,7 @@ import SwiftData
 
 @main
 struct CandyApp: App {
-//    var sharedModelContainer: ModelContainer = {
-//        let schema = Schema([
-//            Item.self,
-//        ])
-//        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-//
-//        do {
-//            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-//        } catch {
-//            fatalError("Could not create ModelContainer: \(error)")
-//        }
-//    }()
+
     var container: ModelContainer = {
         do {
             
@@ -31,11 +20,9 @@ struct CandyApp: App {
             ])
             
             let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false, allowsSave: true)
-
-//            let configCand = ModelConfiguration(for: Candidatures.self, isStoredInMemoryOnly: false)
-//            let configEnt = ModelConfiguration(for: Entreprises.self, isStoredInMemoryOnly: false)
             
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
+
         } catch {
             fatalError("Failed to configure DB : \(error)");
         }
@@ -43,8 +30,6 @@ struct CandyApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            MenuView()
-            MainView()
             CategoryView()
         }
         .modelContainer(container)
