@@ -113,7 +113,7 @@ struct EntreprisesView: View {
         withAnimation {
 
             for index in offsets {
-                let candidaturesFiltrer: [Candidatures] = allCandidatures.filter { $0.entreprise == items[index].idEnt }
+                let candidaturesFiltrer: [Candidatures] = allCandidatures.filter { $0.entreprise.idEnt == items[index].idEnt }
                 for i in candidaturesFiltrer {
                     modelContext.delete(i)
                 }

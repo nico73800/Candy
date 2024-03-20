@@ -71,8 +71,8 @@ struct CanAddItemView: View {
 
                     return
                 }
-                
-                addCandidatureToModel(idC: id, date: date, entreprise: selectedValue, responsable: responsable)
+                let ent: [Entreprises] = entreprises.filter { $0.idEnt == selectedValue }
+                addCandidatureToModel(idC: id, date: date, entreprise: ent[0], responsable: responsable)
                     let toast = Toast.text("Données ajoutées avec succès")
                     toast.show()
                             }
@@ -87,7 +87,7 @@ struct CanAddItemView: View {
         }
         
     }
-    private func addCandidatureToModel(idC: UUID, date: Date, entreprise: UUID, responsable: String) {
+    private func addCandidatureToModel(idC: UUID, date: Date, entreprise: Entreprises, responsable: String) {
         withAnimation {
             let newItem = Candidatures(id: idC, date: date, entreprise: entreprise, resp: responsable)
             modelContext.insert(newItem)

@@ -13,10 +13,10 @@ import SwiftData
 final class Candidatures {
     @Attribute(.unique) var idCandidatures: UUID = UUID()
     var date: Date
-    var entreprise: UUID
+    var entreprise: Entreprises
     var resp: String
     
-    init(id: UUID, date: Date, entreprise: UUID, resp: String) {
+    init(id: UUID, date: Date, entreprise: Entreprises, resp: String) {
         self.idCandidatures = id
         self.date = date
         self.entreprise = entreprise

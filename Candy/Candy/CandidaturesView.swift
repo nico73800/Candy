@@ -46,7 +46,7 @@ struct CandidaturesView: View {
                     List {
                         ForEach(items) { item in
                             
-                            let ent = getEntrepriseFromItem(id:item.entreprise)
+//                            let ent = getEntrepriseFromItem(id:item.entreprise)
                             
                             VStack(alignment: .trailing) {
                                 
@@ -62,10 +62,10 @@ struct CandidaturesView: View {
                                                 .font(.body.bold())
 
                                             List {
-                                                Text("\(ent[0].nom)")
+                                                Text("\(item.entreprise.nom)")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                 
-                                                Text("\(ent[0].rue) - \(ent[0].ville), \(ent[0].CP) ")
+                                                Text("\(item.entreprise.rue) - \(item.entreprise.ville), \(item.entreprise.CP) ")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                 
                                                 Text("\(item.resp)")
@@ -81,7 +81,7 @@ struct CandidaturesView: View {
 
                                     } label: {
 //                                        var timeZone = TimeZone.current
-                                        Text("Candidature : \(ent[0].nom) au \(item.date.formatted(self.dt))")
+                                        Text("Candidature : \(item.entreprise.nom) au \(item.date.formatted(self.dt))")
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     
