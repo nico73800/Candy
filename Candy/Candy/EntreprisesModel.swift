@@ -14,7 +14,7 @@ final class Entreprises {
     
     @Attribute(.unique) var idEnt: UUID = UUID()
     
-    @Relationship(deleteRule: .cascade, inverse: \Candidatures.idCandidatures) var candidatures: [Candidatures]
+    @Relationship(deleteRule: .cascade, inverse: \Candidatures.entreprise) var candidatures: [Candidatures]
     
     var nom: String
     var CP: String
