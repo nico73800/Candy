@@ -18,8 +18,9 @@ struct CanAddItemView: View {
     @State private var id: UUID = UUID()
     @State private var responsable: String = ""
     @State private var date: Date = Date.now
+//    @State private var selectedValue: Entreprises = Entreprises.init(id: UUID(), nom: "", CP: "", rue: "", ville: "")
     @State private var selectedValue: UUID = UUID()
-    
+
     // Variable globale pour les dates
     private let dt = Date.FormatStyle()
         .locale(Locale(identifier: "fr_FR"))
@@ -57,26 +58,28 @@ struct CanAddItemView: View {
                         .datePickerStyle(.graphical)
                     }
                 }
-            }
-            .navigationTitle(Text("Ajout d'une entreprise"))
-            .onSubmit() {
-                let here: Bool = estPresent(entreprises: entreprises, idATester: selectedValue)
-                
-                guard here == true  &&
-                        responsable.isEmpty == false
-                else {
-                    let toast = Toast.text("Erreur : données manquantes")
-                    print(responsable.isEmpty, here)
-                    toast.show()
+                Button("Ajout des données") {
+                    let here: Bool = estPresent(entreprises: entreprises, idATester: selectedValue)
+                    
+                    guard here == true  &&
+                            responsable.isEmpty == false
+                    else {
+                        let toast = Toast.text("Erreur : données manquantes")
+                        print(responsable.isEmpty, here)
+                        toast.show()
 
-                    return
+                        return
+                    }
+                    let ent: [Entreprises] = entreprises.filter { $0.idEnt == selectedValue }
+                    addCandidatureToModel(idC: id, date: date, entreprise: ent[0], responsable: responsable)
+                        let toast = Toast.text("Données ajoutées avec succès")
+                        toast.show()
                 }
-                let ent: [Entreprises] = entreprises.filter { $0.idEnt == selectedValue }
-                addCandidatureToModel(idC: id, date: date, entreprise: ent[0], responsable: responsable)
-                    let toast = Toast.text("Données ajoutées avec succès")
-                    toast.show()
-                            }
-            .submitLabel(.send)
+
+            }
+            .navigationTitle(Text("Ajout d'une candidature"))
+//            .onSubmit() {
+//            .submitLabel(.send)
 
             
 

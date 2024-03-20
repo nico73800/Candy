@@ -45,9 +45,7 @@ struct CandidaturesView: View {
                     
                     List {
                         ForEach(items) { item in
-                            
-//                            let ent = getEntrepriseFromItem(id:item.entreprise)
-                            
+                                                        
                             VStack(alignment: .trailing) {
                                 
                                 HStack(alignment: .lastTextBaseline) {
@@ -80,7 +78,6 @@ struct CandidaturesView: View {
                                         .cornerRadius(20)
 
                                     } label: {
-//                                        var timeZone = TimeZone.current
                                         Text("Candidature : \(item.entreprise.nom) au \(item.date.formatted(self.dt))")
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)

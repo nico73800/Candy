@@ -11,7 +11,9 @@ import SwiftData
 
 @Model
 final class Candidatures {
+    
     @Attribute(.unique) var idCandidatures: UUID = UUID()
+    
     var date: Date
     var entreprise: Entreprises
     var resp: String

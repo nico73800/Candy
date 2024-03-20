@@ -90,9 +90,7 @@ struct EntreprisesView: View {
                     ToolbarItem {
                         Button("Add Item") {
                             showingSheet.toggle()
-                            
                         }
-                        
                         .sheet(isPresented: $showingSheet) {
                             EntAddItemView()
                         }

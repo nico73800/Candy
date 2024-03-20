@@ -39,7 +39,6 @@ struct EntAddItemView: View {
                             Text("rue (complète avec numéro)")
                         }.disableAutocorrection(true)
 
-                        
                         TextField(text: $ville,
                                   prompt: Text("Ville (requis)")) {
                             Text("ville")
@@ -52,28 +51,31 @@ struct EntAddItemView: View {
 
                     }
                 }
-            }
-            .navigationTitle(Text("Ajout d'une entreprise"))
-            .onSubmit() {
-                guard nom.isEmpty == false &&
-                    rue.isEmpty == false &&
-                    ville.isEmpty == false &&
-                        cp.isEmpty == false && cp.count == 5 && cp.isNumber == true
-                else {
-                    let toast = Toast.text("Erreur : données manquantes | code postal invalide")
-                    toast.show()
+                Button("Ajout des données") {
+                    guard nom.isEmpty == false &&
+                        rue.isEmpty == false &&
+                        ville.isEmpty == false &&
+                            cp.isEmpty == false && cp.count == 5 && cp.isNumber == true
+                    else {
+                        let toast = Toast.text("Erreur : données manquantes | code postal invalide")
+                        toast.show()
 
-                    return
-                }
-                
-                addEntrepriseToModel(idE: id, nomE: nom, cpE: cp, rueE: rue, villeE: ville)
+                        return
+                    }
+                    
+                    addEntrepriseToModel(idE: id, nomE: nom, cpE: cp, rueE: rue, villeE: ville)
                     let toast = Toast.text("Données ajoutées avec succès")
                     toast.show()
+                }
             }
-            .submitLabel(.send)
+            .navigationTitle(Text("Ajout d'une entreprise"))
+//            .onSubmit() {
+//            .submitLabel(.send)
 
         }
+        
 
+        // Bouton d'annulation
         Button("Retour à la page") {
             dismiss()
         }

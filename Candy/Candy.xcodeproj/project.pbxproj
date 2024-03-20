@@ -130,8 +130,8 @@
 				CEF6E00F2B8E73B900744926 /* CandidaturesModel.swift */,
 				CEF6E0112B8E747600744926 /* EntreprisesModel.swift */,
 				CEDFC5492B92413000B53D2C /* EntAddItemView.swift */,
-				CEDFC54B2B92512100B53D2C /* AlertView.swift */,
 				D6331BAB2B934F660070A42F /* CanAddItemView.swift */,
+				CEDFC54B2B92512100B53D2C /* AlertView.swift */,
 			);
 			path = Candy;
 			sourceTree = "<group>";
