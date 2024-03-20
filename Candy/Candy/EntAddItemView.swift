@@ -58,9 +58,9 @@ struct EntAddItemView: View {
                 guard nom.isEmpty == false &&
                     rue.isEmpty == false &&
                     ville.isEmpty == false &&
-                    cp.isEmpty == false
+                        cp.isEmpty == false && cp.count == 5 && cp.isNumber == true
                 else {
-                    let toast = Toast.text("Erreur : données manquantes")
+                    let toast = Toast.text("Erreur : données manquantes | code postal invalide")
                     toast.show()
 
                     return
@@ -87,5 +87,13 @@ struct EntAddItemView: View {
             modelContext.insert(newItem)
         }
     }
+    
+}
 
+extension String {
+    var isNumber: Bool {
+        return self.range(
+            of: "^[0-9]*$", // 1
+            options: .regularExpression) != nil
+    }
 }
