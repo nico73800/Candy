@@ -48,9 +48,13 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
         - Ajout d'une fonction estPresent(...) pour tester la présence de l'ID de l'entreprise avec l'ID récupérer du Picker  
 
 ### V0.5.1 : corrections et bugs
-- suppression des commentaires inutiles 
+- Suppression des commentaires inutiles 
 - Apparition des bugs dans les interfaces : l'app crash à l'ouverture des candidature après une suppression d'une entreprise avec une candidature
-- suppresion des éléments inutiles dans les vues, notamment le MainView qui s'incrustait dans chacune des vues lorsque on le met dans la partie body > WindowsGroup du fichier CandyApp.swift  
+- Suppresion des éléments inutiles dans les vues, notamment le MainView qui s'incrustait dans chacune des vues lorsque on le met dans la partie body > WindowsGroup du fichier CandyApp.swift  
+
+### V0.5.2 : corrections des bugs de la version V0.5.1 et modifications annexes
+- Ajout des règle de suppression en cascade permettant la suppression d'une fonction qui faisait planter l'app.
+- Modification du modèle de données pour CandidaturesModel : changement du type "entreprise : uuid" -> "entreprise : Entreprises".
 
 ## Fonctionnalités futures ou envisagées
 ### Fonctionnalités futures 
