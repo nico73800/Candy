@@ -59,30 +59,23 @@ struct CanAddItemView: View {
                     }
                 }
                 Button("Ajout des données") {
-                    let here: Bool = estPresent(entreprises: entreprises, idATester: selectedValue)
-                    
-                    guard here == true  &&
+                    let valEntreprise = estPresent(entreprises: entreprises, idATester: selectedValue) ?? nil
+                    guard valEntreprise != nil &&
                             responsable.isEmpty == false
                     else {
                         let toast = Toast.text("Erreur : données manquantes")
-                        print(responsable.isEmpty, here)
                         toast.show()
 
                         return
                     }
-                    let ent: [Entreprises] = entreprises.filter { $0.idEnt == selectedValue }
-                    addCandidatureToModel(idC: id, date: date, entreprise: ent[0], responsable: responsable)
+                    addCandidatureToModel(idC: id, date: date, entreprise: valEntreprise.unsafelyUnwrapped, responsable: responsable)
                         let toast = Toast.text("Données ajoutées avec succès")
                         toast.show()
                 }
 
             }
             .navigationTitle(Text("Ajout d'une candidature"))
-//            .onSubmit() {
-//            .submitLabel(.send)
-
             
-
         }
 
         Button("Retour à la page") {
@@ -97,16 +90,14 @@ struct CanAddItemView: View {
         }
     }
     
-    private func estPresent(entreprises: [Entreprises], idATester: UUID) -> Bool {
-        var here: Bool = false
+    private func estPresent(entreprises: [Entreprises], idATester: UUID) -> Entreprises? {
+        var entreprise: Entreprises?
         for ent in entreprises {
             if ent.idEnt == selectedValue {
-                here = true
-            } else {
-                here = false
+                entreprise = ent
             }
         }
-        return here
+        return entreprise
     }
 }
 

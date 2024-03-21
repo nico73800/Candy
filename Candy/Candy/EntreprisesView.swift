@@ -45,8 +45,7 @@ struct EntreprisesView: View {
                                 NavigationLink {
                                     
                                     GroupBox(label:
-                                                Label("Entreprises",
-                                                      systemImage: "building")
+                                                Label("Entreprises", systemImage: "building")
                                     ) {
                                         Text("ID : \(item.idEnt)")
                                             .frame(maxWidth:.infinity, alignment: .leading)

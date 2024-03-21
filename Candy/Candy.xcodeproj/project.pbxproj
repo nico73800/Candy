@@ -15,7 +15,6 @@
 		CE740CCC2B8CA6070044A657 /* CandyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE740CCB2B8CA6070044A657 /* CandyTests.swift */; };
 		CE740CD62B8CA6070044A657 /* CandyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE740CD52B8CA6070044A657 /* CandyUITests.swift */; };
 		CE740CD82B8CA6070044A657 /* CandyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE740CD72B8CA6070044A657 /* CandyUITestsLaunchTests.swift */; };
-		CED088F02B92F9C200D229CF /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = CED088EF2B92F9C200D229CF /* Toast */; };
 		CED2D7CB2B8D254A00B0258C /* EntreprisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2D7CA2B8D254900B0258C /* EntreprisesView.swift */; };
 		CED2D7CD2B8D25E800B0258C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2D7CC2B8D25E800B0258C /* CategoryView.swift */; };
 		CEDFC54A2B92413000B53D2C /* EntAddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDFC5492B92413000B53D2C /* EntAddItemView.swift */; };
@@ -25,6 +24,7 @@
 		CEF6E0102B8E73B900744926 /* CandidaturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E00F2B8E73B900744926 /* CandidaturesModel.swift */; };
 		CEF6E0122B8E747600744926 /* EntreprisesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E0112B8E747600744926 /* EntreprisesModel.swift */; };
 		D6331BAC2B934F660070A42F /* CanAddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6331BAB2B934F660070A42F /* CanAddItemView.swift */; };
+		D6F0280A2BAC136A00AB788B /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D6F028092BAC136A00AB788B /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED088F02B92F9C200D229CF /* Toast in Frameworks */,
+				D6F0280A2BAC136A00AB788B /* Toast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +178,7 @@
 			);
 			name = Candy;
 			packageProductDependencies = (
-				CED088EF2B92F9C200D229CF /* Toast */,
+				D6F028092BAC136A00AB788B /* Toast */,
 			);
 			productName = Candy;
 			productReference = CE740CB52B8CA6030044A657 /* Candy.app */;
@@ -652,7 +652,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CED088EF2B92F9C200D229CF /* Toast */ = {
+		D6F028092BAC136A00AB788B /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CED088EE2B92F9C100D229CF /* XCRemoteSwiftPackageReference "toast-swift" */;
 			productName = Toast;

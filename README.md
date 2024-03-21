@@ -60,6 +60,10 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
 - Suppression des commentaires inutiles 
 - Bugs : ajout des données, raison : refuse la première valeur d'une liste 
 
+### V0.5.4 : corrections des bugs de la version V0.5.3 et modifications annexes
+- Suppression des commentaires inutiles 
+- Modification de la fonction "estPresent" dans 'CanAddItemView.swift' qui retourne un type Entreprises au lieu d'un booléen, et modification de l'utilisation de la fonction dans le même fichier qui si la fonction ne renvoie rien alors un contenu vide est renvoyé.
+
 ## Fonctionnalités futures ou envisagées
 ### Fonctionnalités futures 
 - Ajout de la partie entretiens de l'application 
