@@ -69,8 +69,6 @@ struct EntAddItemView: View {
                 }
             }
             .navigationTitle(Text("Ajout d'une entreprise"))
-//            .onSubmit() {
-//            .submitLabel(.send)
 
         }
         

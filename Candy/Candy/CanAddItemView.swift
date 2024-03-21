@@ -18,7 +18,6 @@ struct CanAddItemView: View {
     @State private var id: UUID = UUID()
     @State private var responsable: String = ""
     @State private var date: Date = Date.now
-//    @State private var selectedValue: Entreprises = Entreprises.init(id: UUID(), nom: "", CP: "", rue: "", ville: "")
     @State private var selectedValue: UUID = UUID()
 
     // Variable globale pour les dates
