@@ -11,7 +11,7 @@ import SwiftData
 
 struct CandidaturesView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Candidatures]
+    @Query private var candidatures: [Candidatures]
     @Query private var entreprises: [Entreprises]
 
     // Variable globale pour les dates
@@ -26,7 +26,7 @@ struct CandidaturesView: View {
   
             NavigationSplitView {
                 
-                if items.isEmpty {
+                if candidatures.isEmpty {
                     Text("Rien à afficher")
                     .toolbar {
                         ToolbarItem {
@@ -44,7 +44,7 @@ struct CandidaturesView: View {
                 } else {
                     
                     List {
-                        ForEach(items) { item in
+                        ForEach(candidatures) { item in
                                                         
                             VStack(alignment: .trailing) {
                                 
@@ -118,7 +118,7 @@ struct CandidaturesView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(candidatures[index])
             }
         }
     }

@@ -22,6 +22,10 @@ struct CategoryView: View {
                 .tabItem{
                     Label("Candidatures", systemImage: "newspaper")
                 }
+            StatsView()
+                .tabItem{
+                    Label("Stats", systemImage: "chart.bar")
+                }
         }
 
     }
