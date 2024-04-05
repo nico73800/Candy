@@ -6,22 +6,22 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
 - Apprentissage des bases du langages Swift et du fonctionnement de l'UI des OS Apple (en particulier IOS)
 - Mise en place des premières vues (misent à jour par la suite)
 
-### V0.1 : les données et leurs modèles
+### V0.1.0 : les données et leurs modèles
 - Continuité de l'apprentissage du fonctionnement de l'UI des OS Apple (IOS en particulier)
 - Mise en place du modèle de données appropriés
 
-### V0.2 : Les vues et les données liées 
+### V0.2.0 : Les vues et les données liées 
 - Mise en place des vues : 
     - Home (avec du texte temporaire)
     - Candidatures 
     - Entreprises
 - Connexion des vues avec les modèles de données 
 
-### V0.3 : Début de l'agencement des vues et des liens entre elles 
+### V0.3.0 : Début de l'agencement des vues et des liens entre elles 
 - Ajout d'un item "TabView" permettant d'accéder aux différentes vues de l'application
 - Modification de l'esthétique des vues
 
-### V0.4 : Ajout de données dans la BDD
+### V0.4.0 : Ajout de données dans la BDD
 - Ajout de la vue permettant l'ajout de données dans la BDD
 - Ajout de la fonction addEntrepriseToModel(...) permettant l'ajout des données d'entreprise à la BDD
 
@@ -36,7 +36,7 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
 - Ajout du contrôle d'intégrité dans les données des entreprises liées aux candidatures :
     * Si une entreprise est supprimée et est liée à une candidature, la candidature sera supprimée également.
 
-### V0.5 : Modification du modèle de données et des vues EntreprisesView et CandidaturesView (et sous vues associées)
+### V0.5.0 : Modification du modèle de données et des vues EntreprisesView et CandidaturesView (et sous vues associées)
 - Dans les candidatures, remplacement dans le constructeur de la classe entreprise par l'ID de l'entreprise 
 - Dans la vue CandidaturesView : 
     - Ajout d'une fonction permettant la récupération des données d'une entreprise par son ID 
@@ -63,6 +63,12 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
 ### V0.5.4 : corrections des bugs de la version V0.5.3 et modifications annexes
 - Suppression des commentaires inutiles 
 - Modification de la fonction "estPresent" dans 'CanAddItemView.swift' qui retourne un type Entreprises au lieu d'un booléen, et modification de l'utilisation de la fonction dans le même fichier qui si la fonction ne renvoie rien alors un contenu vide est renvoyé.
+
+### V1.0.0 : Ajout de la partie Statistiques
+- Ajout de la vue StatsView : affichant les statistiques de candidatures (uniquement le nombre de candidatures à l'heure actuelle), sous la forme d'un graphique en barre.
+
+### V1.0.1 : Corrections des bugs dans la vue StatsView
+- Correction du bug qui faisait que l'application cumulait le nombre de candidatures pour chaque mois
 
 ## Fonctionnalités futures ou envisagées
 ### Fonctionnalités futures 
