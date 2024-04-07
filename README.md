@@ -70,6 +70,10 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
 ### V1.0.1 : Corrections des bugs dans la vue StatsView
 - Correction du bug qui faisait que l'application cumulait le nombre de candidatures pour chaque mois
 
+### V1.1.0 : Modification de l'esthétique de l'UI
+- Modification des espacements dans les GroupBox des vues CandidaturesView et EntreprisesView
+- Remplacement de la fonction dépréciée "cornerRadius" par la fonction "clipShape"
+
 ## Fonctionnalités futures ou envisagées
 ### Fonctionnalités futures 
 - Ajout de la partie entretiens de l'application 

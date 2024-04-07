@@ -63,7 +63,7 @@ struct CandidaturesView: View {
                                                 Text("\(item.entreprise.nom)")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                 
-                                                Text("\(item.entreprise.rue) - \(item.entreprise.ville), \(item.entreprise.CP) ")
+                                                Text("\(item.entreprise.rue), \(item.entreprise.CP) \(item.entreprise.ville)")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                 
                                                 Text("\(item.resp)")
@@ -71,11 +71,15 @@ struct CandidaturesView: View {
                                                 
                                                 Text("\(item.date.formatted(self.dt))")
                                                     .frame(maxWidth: .infinity, alignment: .leading)
-
                                             }
+                                            .padding(0)
+                                            .contentMargins(5)
+                                            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            
                                         }
                                         .padding(10)
-                                        .cornerRadius(20)
+                                        .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
 
                                     } label: {
                                         Text("Candidature : \(item.entreprise.nom) au \(item.date.formatted(self.dt))")
@@ -128,3 +132,7 @@ struct CandidaturesView: View {
     }
     
 }
+
+//#Preview {
+//    CandidaturesView()
+//}

@@ -1,5 +1,5 @@
 //
-//  StatsModel.swift
+//  StatsView.swift
 //  Candy
 //
 //  Created by nicolas chaloyard on 28/03/2024.
@@ -35,6 +35,10 @@ struct StatsView: View {
                     y: .value("Nombre", candidatures.filter { candidatures.first?.date == $0.date }.count)
                 )
             }
+            .padding(10)
+            .contentMargins(5)
+//            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
     

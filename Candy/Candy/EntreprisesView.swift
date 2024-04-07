@@ -60,13 +60,13 @@ struct EntreprisesView: View {
                                         }
                                         .padding(0)
                                         .contentMargins(5)
-                                        .cornerRadius(20)
+                                        .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         
                                     }
                                     .padding(10)
-                                    .cornerRadius(20)
-                                    
+                                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+
                                 } label: {
                                     Text("Entreprise : \(item.nom)")
                                 }
@@ -119,8 +119,8 @@ struct EntreprisesView: View {
     }
 }
 
-#Preview {
-    EntreprisesView()
-        .modelContainer(for: Entreprises.self, inMemory: true)
-
-}
+//#Preview {
+//    EntreprisesView()
+//        .modelContainer(for: Entreprises.self, inMemory: true)
+//
+//}
