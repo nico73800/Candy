@@ -59,13 +59,15 @@ struct EntAddItemView: View {
                     else {
                         let toast = Toast.text("Erreur : données manquantes | code postal invalide")
                         toast.show()
-
+                        
                         return
                     }
                     
                     addEntrepriseToModel(idE: id, nomE: nom, cpE: cp, rueE: rue, villeE: ville)
                     let toast = Toast.text("Données ajoutées avec succès")
                     toast.show()
+                    dismiss()
+                    return
                 }
             }
             .navigationTitle(Text("Ajout d'une entreprise"))

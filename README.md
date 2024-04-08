@@ -74,6 +74,9 @@ Candy est une app permettant la gestion de ses candidatures à différents emplo
 - Modification des espacements dans les GroupBox des vues CandidaturesView et EntreprisesView
 - Remplacement de la fonction dépréciée "cornerRadius" par la fonction "clipShape"
 
+### V1.1.1 : Bugs dans l'ajout des données dans les sous vues Can/EntAddItemView 
+- La page d'ajout ne se ferme pas automatiquement + les données si l'on souhaite en ajouté une autre modifie la données venant d'être ajoutée 
+
 ## Fonctionnalités futures ou envisagées
 ### Fonctionnalités futures 
 - Ajout de la partie entretiens de l'application 

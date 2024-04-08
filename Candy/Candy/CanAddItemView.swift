@@ -70,6 +70,9 @@ struct CanAddItemView: View {
                     addCandidatureToModel(idC: id, date: date, entreprise: valEntreprise.unsafelyUnwrapped, responsable: responsable)
                         let toast = Toast.text("Données ajoutées avec succès")
                         toast.show()
+                    dismiss()
+                    return
+
                 }
 
             }
