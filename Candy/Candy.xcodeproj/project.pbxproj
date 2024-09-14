@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE1009392BC2728300229145 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = CE1009382BC2728300229145 /* Toast */; };
 		CE740CB92B8CA6030044A657 /* CandyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE740CB82B8CA6030044A657 /* CandyApp.swift */; };
 		CE740CBB2B8CA6030044A657 /* CandidaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE740CBA2B8CA6030044A657 /* CandidaturesView.swift */; };
 		CE740CBD2B8CA6030044A657 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE740CBC2B8CA6030044A657 /* Item.swift */; };
@@ -26,6 +25,7 @@
 		CEF6E0122B8E747600744926 /* EntreprisesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E0112B8E747600744926 /* EntreprisesModel.swift */; };
 		D6331BAC2B934F660070A42F /* CanAddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6331BAB2B934F660070A42F /* CanAddItemView.swift */; };
 		D6952CF32BB5511100B633F9 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6952CF22BB5511100B633F9 /* StatsView.swift */; };
+		D6FAAE562C958FA800A91487 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D6FAAE552C958FA800A91487 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE1009392BC2728300229145 /* Toast in Frameworks */,
+				D6FAAE562C958FA800A91487 /* Toast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +181,7 @@
 			);
 			name = Candy;
 			packageProductDependencies = (
-				CE1009382BC2728300229145 /* Toast */,
+				D6FAAE552C958FA800A91487 /* Toast */,
 			);
 			productName = Candy;
 			productReference = CE740CB52B8CA6030044A657 /* Candy.app */;
@@ -248,7 +248,7 @@
 			};
 			buildConfigurationList = CE740CB02B8CA6030044A657 /* Build configuration list for PBXProject "Candy" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = fr;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -488,6 +488,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,6 +519,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -656,7 +658,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CE1009382BC2728300229145 /* Toast */ = {
+		D6FAAE552C958FA800A91487 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CED088EE2B92F9C100D229CF /* XCRemoteSwiftPackageReference "toast-swift" */;
 			productName = Toast;

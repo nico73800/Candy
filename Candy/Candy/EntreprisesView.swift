@@ -12,7 +12,7 @@ struct EntreprisesView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Entreprises]
     
-    @Query(sort: [SortDescriptor(\Candidatures.idCandidatures)])
+    @Query(sort: [SortDescriptor(\Candidatures.date)])
     private var allCandidatures: [Candidatures]
 
     @State private var showingSheet = false

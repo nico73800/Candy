@@ -13,7 +13,6 @@ struct CandyApp: App {
 
     var container: ModelContainer = {
         do {
-            
             let schema = Schema([
                 Candidatures.self,
                 Entreprises.self,
@@ -24,15 +23,34 @@ struct CandyApp: App {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
 
         } catch {
-            fatalError("Failed to configure DB : \(error)");
+            var d = Del()
+            d.deleteData()
+            fatalError("Failed to configure DB : \(error)")
         }
     }()
+
 
     var body: some Scene {
         WindowGroup {
             CategoryView()
         }
         .modelContainer(container)
+    }
+}
+
+class Del {
+    @Environment(\.modelContext) private var modelContext
+    func deleteData() {
+        do {
+            try modelContext.delete(model: Candidatures.self)
+        } catch {
+            print("Failed to delete Candidatures")
+        }
+        do {
+            try modelContext.delete(model: Entreprises.self)
+        } catch {
+            print("Failed to delete Entreprises")
+        }
     }
 }
 

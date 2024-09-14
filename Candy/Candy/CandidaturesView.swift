@@ -55,7 +55,7 @@ struct CandidaturesView: View {
                                         GroupBox(label:
                                             Label("Candidatures", systemImage: "newspaper")
                                         ) {
-                                            Text("ID : \(item.idCandidatures.uuidString)")
+                                            Text("ID : \(item.idCandidature.uuidString)")
                                                 .frame(maxWidth: .infinity, alignment: .leading)
                                                 .font(.body.bold())
 

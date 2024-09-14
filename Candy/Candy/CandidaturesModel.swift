@@ -12,21 +12,21 @@ import SwiftData
 @Model
 final class Candidatures {
     
-    @Attribute(.unique) var idCandidatures: UUID = UUID()
+    @Attribute(.unique) var idCandidature: UUID = UUID()
     
     var date: Date
     var entreprise: Entreprises
     var resp: String
     
     init(id: UUID, date: Date, entreprise: Entreprises, resp: String) {
-        self.idCandidatures = id
+        self.idCandidature = id
         self.date = date
         self.entreprise = entreprise
         self.resp = resp
     }
     
     func convertUUID() -> String {
-        return self.idCandidatures.uuidString
+        return self.idCandidature.uuidString
     }
     
 }
