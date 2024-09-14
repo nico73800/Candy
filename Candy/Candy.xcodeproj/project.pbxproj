@@ -23,9 +23,9 @@
 		CEF6E00E2B8E629700744926 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E00D2B8E629700744926 /* MainView.swift */; };
 		CEF6E0102B8E73B900744926 /* CandidaturesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E00F2B8E73B900744926 /* CandidaturesModel.swift */; };
 		CEF6E0122B8E747600744926 /* EntreprisesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E0112B8E747600744926 /* EntreprisesModel.swift */; };
+		CEF793DA2C95E4FB00CF87F1 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = CEF793D92C95E4FB00CF87F1 /* Toast */; };
 		D6331BAC2B934F660070A42F /* CanAddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6331BAB2B934F660070A42F /* CanAddItemView.swift */; };
 		D6952CF32BB5511100B633F9 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6952CF22BB5511100B633F9 /* StatsView.swift */; };
-		D6FAAE562C958FA800A91487 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D6FAAE552C958FA800A91487 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6FAAE562C958FA800A91487 /* Toast in Frameworks */,
+				CEF793DA2C95E4FB00CF87F1 /* Toast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +181,7 @@
 			);
 			name = Candy;
 			packageProductDependencies = (
-				D6FAAE552C958FA800A91487 /* Toast */,
+				CEF793D92C95E4FB00CF87F1 /* Toast */,
 			);
 			productName = Candy;
 			productReference = CE740CB52B8CA6030044A657 /* Candy.app */;
@@ -658,7 +658,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D6FAAE552C958FA800A91487 /* Toast */ = {
+		CEF793D92C95E4FB00CF87F1 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CED088EE2B92F9C100D229CF /* XCRemoteSwiftPackageReference "toast-swift" */;
 			productName = Toast;

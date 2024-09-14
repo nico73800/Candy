@@ -27,7 +27,7 @@ struct StatsView: View {
     var body: some View {
                     
         if candidatures.isEmpty {
-            Text("Rien à afficher")
+            Text("Aucune stats à afficher")
         } else {
             Chart(candidatures, id: \.date) {
                 BarMark(
